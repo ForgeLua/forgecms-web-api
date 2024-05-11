@@ -12,11 +12,11 @@ local app   = lapis.Application()
 
 -- Require routers
 local jwt_router     = require("modules.jwt.jwt_router")
--- local account_router = require("module.news.middleware.news_router")
+local news_router    = require("modules.news.news_router")
 
 -- Call routers
 jwt_router( app )
--- news_router( app )
+news_router( app )
 
 -- Handle Error
 app.handle_404 = function (self)
@@ -26,4 +26,5 @@ end
 app.handle_error = function (self, err, trace)
     return { status = 500, json = { error = "Error 500 : Internal server error", detail = err, trace = trace } }
 end
+
 return app

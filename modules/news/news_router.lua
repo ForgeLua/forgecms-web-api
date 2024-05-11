@@ -7,3 +7,12 @@
     @Contributors : M4v3r1ck0, alexis-piquet
 ]]--
 
+local controller = require("modules.news.controller.news_controller")
+local respond_to = require("lapis.application").respond_to
+local json_params = require("lapis.application").json_params
+
+return function(app)
+    app:match( "/news", respond_to({
+        GET = controller.get_all,
+    }))
+end

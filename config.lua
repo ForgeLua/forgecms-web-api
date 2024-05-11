@@ -10,8 +10,16 @@
 local config = require("lapis.config")
 
 config("development", {
-  server = "nginx",
-  code_cache = "off",
-  num_workers = "1",
-  port = 8080
+    server = "nginx",
+    code_cache = "off",
+    num_workers = "1",
+    port = 8080,
+
+    mysql = {
+        host = "127.0.0.1",
+        port = "3306",
+        user = "forgecms",
+        password = "forgecms",
+        database = "forgecms"
+    }
 })
