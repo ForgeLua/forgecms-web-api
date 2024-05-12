@@ -15,4 +15,8 @@ return function(app)
     app:match( "/news", respond_to({
         GET = controller.list,
     }))
+
+    app:match( "/news/:id", respond_to({
+        GET = controller.get,
+    }))
 end

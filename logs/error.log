@@ -1,0 +1,2 @@
+2024/05/12 14:06:18 [alert] 2400#2400: lua_code_cache is off; this will hurt performance in /home/development/web_api/nginx.conf.compiled:20
+2024/05/12 14:06:31 [alert] 2491#2491: lua_code_cache is off; this will hurt performance in /home/development/web_api/nginx.conf.compiled:20

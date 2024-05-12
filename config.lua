@@ -13,7 +13,7 @@ config("development", {
     server = "nginx",
     code_cache = "off",
     num_workers = "1",
-    port = 8080,
+    port = 4444,
 
     mysql = {
         host = "127.0.0.1",

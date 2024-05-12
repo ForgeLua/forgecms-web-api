@@ -24,4 +24,10 @@ function entity.list(page, size)
 end
 --[[ End   :: All Section ]]--
 
+--[[ Start :: Get Section ]]--
+function entity.get(id)
+    return news:find(id)
+end
+--[[ End   :: Get Section ]]--
+
 return entity

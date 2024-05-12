@@ -33,4 +33,9 @@ function controller.list(self)
     return response.send(200, req_time, news_info, total_pages)
 end
 
+function controller.get(self)
+    local news = entity.get(self.params.id)
+    return response.send(200, req_time, news)
+end
+
 return controller
