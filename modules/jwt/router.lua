@@ -7,12 +7,8 @@
     @Contributors : M4v3r1ck0, alexis-piquet
 ]]--
 
-local controller = require("modules.news.controller.news_controller")
-local respond_to = require("lapis.application").respond_to
-local json_params = require("lapis.application").json_params
+local controller = require("modules.jwt.controller")
 
 return function(app)
-    app:match( "/news", respond_to({
-        GET = controller.get_all,
-    }))
+    app:before_filter(controller.decode)
 end

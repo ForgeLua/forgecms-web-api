@@ -11,8 +11,8 @@ local lapis = require("lapis")
 local app   = lapis.Application()
 
 -- Require routers
-local jwt_router     = require("modules.jwt.jwt_router")
-local news_router    = require("modules.news.news_router")
+local jwt_router     = require("modules.jwt.router")
+local news_router    = require("modules.news.router")
 
 -- Call routers
 jwt_router( app )

@@ -37,23 +37,23 @@ local function verify_token(token)
 end
 
 function controller.decode(self)
-local authHeader = self.req.headers.Authorization
-if not authHeader then
-    self:write({ status = 401, json = { error = "Token is missing" } })
-    return false
-end
+    local authHeader = self.req.headers.Authorization
+    if not authHeader then
+        self:write({ status = 401, json = { error = "Token is missing" } })
+        return false
+    end
 
-local token = authHeader:match('Bearer (.+)')
-if not token then
-    self:write({ status = 401, json = { error = "Token format is invalid" } })
-    return false
-end
+    local token = authHeader:match('Bearer (.+)')
+    if not token then
+        self:write({ status = 401, json = { error = "Token format is invalid" } })
+        return false
+    end
 
-local payload, err = verify_token(token)
-if err then
-    self:write({ status = 403, json = { error = "Token is invalid" } })
-    return false
-end
+    local payload, err = verify_token(token)
+    if err then
+        self:write({ status = 403, json = { error = "Token is invalid" } })
+        return false
+    end
 end
 
 return controller

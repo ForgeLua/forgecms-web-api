@@ -7,7 +7,7 @@
     @Contributors : M4v3r1ck0, alexis-piquet
 ]]--
 
-local entity           = require("modules.news.entity.news_entity")
+local entity           = require("modules.news.entity")
 local meta             = require("common.meta")
 local pagination       = require("common.pagination")
 local response         = require("common.response")
@@ -15,9 +15,9 @@ local response         = require("common.response")
 local req_time         = os.clock()
 local controller       = { }
 
-function controller.get_all(self)
+function controller.list(self)
     local page, size    = pagination.get_page_and_size(self.params)
-    local all_news      = entity.get_all(page, size)
+    local all_news      = entity.list(page, size)
     local total_pages   = entity.count(size)
 
     local news_info = {}

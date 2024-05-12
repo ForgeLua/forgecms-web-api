@@ -19,7 +19,7 @@ function entity.count(size)
 end
 
 --[[ Start :: All Section ]]--
-function entity.get_all(page, size)
+function entity.list(page, size)
     return database.query("SELECT id, title, image, date, author FROM news ORDER BY id LIMIT ?, ?;", ( page - 1 ) * size, size)
 end
 --[[ End   :: All Section ]]--
