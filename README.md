@@ -4,6 +4,7 @@
 Install resty OpenSSL library.
 ```sh
 luarocks install lua-resty-openssl
+luarocks install lua-resty-rsa
 ```
 
 Install luajwtjitsi for SRP6 (is updated for latest version of Lua-CJson)
